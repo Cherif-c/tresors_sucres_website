@@ -1,4 +1,6 @@
-import { Clock3, MapPin, Phone } from 'lucide-react';
+import ReviewCta from '@/components/ReviewCta';
+import SocialLinks from '@/components/SocialLinks';
+import UberEatsCta from '@/components/UberEatsCta';
 
 const pastries = [
   'Baklawa',
@@ -11,20 +13,20 @@ const pastries = [
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <div>
       <section className="mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-10">
         <header className="flex flex-col gap-6 rounded-[2rem] border border-white/10 bg-black/10 p-6 shadow-soft backdrop-blur md:p-8">
           <div className="flex flex-col gap-5 border-b border-white/10 pb-6 md:flex-row md:items-center md:justify-between">
             <div>
               <div className="mb-3 inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.25em] text-tsCream/80">
-                Patisserie algerienne artisanale
+                Pâtisserie algérienne artisanale
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-tsCream md:text-6xl">
-                Tresors Sucres
+                Trésors Sucrés
               </h1>
               <p className="mt-4 max-w-2xl text-base leading-8 text-tsCream/85 md:text-lg">
                 Plus de 20 ans de savoir-faire, de patience et de gourmandise pour faire rayonner
-                les patisseries algeriennes a Montreal.
+                les pâtisseries algériennes à Montréal.
               </p>
             </div>
 
@@ -40,77 +42,40 @@ export default function HomePage() {
                 <div className="h-full w-1/2 bg-tsGreen" />
               </div>
               <div className="text-5xl font-semibold leading-none text-tsCream md:text-7xl">
-                Tradi0tion.
+                Tradition.
                 <br />
                 Elegance.
                 <br />
                 Generosite.
               </div>
               <p className="mt-6 max-w-2xl text-base leading-8 text-tsCream/80">
-                Une maison de patisseries algeriennes fines pour offrir, partager et celebrer.
-                Une signature visuelle sobre, chaleureuse et haut de gamme, a l'image de la marque.
+                Une maison de pâtisseries algériennes fines pour offrir, partager et célébrer.
+                Une signature visuelle sobre, chaleureuse et haut de gamme, à l’image de la marque.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#patisseries"
+                  href="/menu"
                   className="rounded-full bg-tsCream px-5 py-3 text-sm font-semibold text-tsBurgundy transition hover:opacity-90"
                 >
-                  Voir les patisseries
+                  Voir le menu
                 </a>
                 <a
-                  href="#visite"
+                  href="/nous-visiter"
                   className="rounded-full border border-tsCream/30 px-5 py-3 text-sm font-semibold text-tsCream transition hover:bg-white/5"
                 >
                   Nous visiter
                 </a>
               </div>
             </div>
-
-            <div id="visite" className="grid gap-4">
-              <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                <div className="mb-4 text-xs uppercase tracking-[0.22em] text-tsCream/65">Informations</div>
-                <div className="space-y-4 text-tsCream/90">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 h-5 w-5 text-tsCream" />
-                    <div>
-                      <div className="font-medium text-tsCream">3636 Rue Jean-Talon Est</div>
-                      <div className="text-sm text-tsCream/70">Montreal, Quebec</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock3 className="mt-0.5 h-5 w-5 text-tsCream" />
-                    <div>
-                      <div className="font-medium text-tsCream">Tous les jours</div>
-                      <div className="text-sm text-tsCream/70">9 h a 21 h</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="mt-0.5 h-5 w-5 text-tsCream" />
-                    <div>
-                      <div className="font-medium text-tsCream">(514) 223-2174</div>
-                      <div className="text-sm text-tsCream/70">Commandes et renseignements</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-[1.75rem] border border-white/10 bg-tsGreen/90 p-6 text-tsCream shadow-soft">
-                <div className="text-xs uppercase tracking-[0.22em] text-tsCream/70">Maison signature</div>
-                <p className="mt-4 text-lg leading-8 text-tsCream/95">
-                  Baklawa, makrout, tcharek, dziriette et autres douceurs preparees dans un esprit
-                  de tradition, de finesse et de generosite.
-                </p>
-              </div>
-            </div>
           </div>
         </header>
       </section>
 
-      <section id="patisseries" className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
+      <section className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-3 text-xs uppercase tracking-[0.24em] text-tsCream/65">Selection</div>
-            <h2 className="text-3xl font-semibold text-tsCream md:text-5xl">Nos patisseries</h2>
+            <h2 className="text-3xl font-semibold text-tsCream md:text-5xl">Aperçu du menu</h2>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-tsCream/80 md:text-base">
             Un assortiment de classiques algeriens et de specialites maison presente dans une
@@ -119,7 +84,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {pastries.map((item) => (
+          {pastries.slice(0, 3).map((item) => (
             <div
               key={item}
               className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10"
@@ -132,19 +97,46 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+
+        <div className="mt-8">
+          <a
+            href="/menu"
+            className="inline-flex rounded-full border border-tsCream/30 px-5 py-3 text-sm font-semibold text-tsCream transition hover:bg-white/5"
+          >
+            Voir tout le menu
+          </a>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-10 md:px-10">
+        <div className="mb-8">
+          <div className="text-xs uppercase tracking-[0.24em] text-tsCream/65">On aime vos retours</div>
+          <h2 className="mt-2 text-3xl font-semibold text-tsCream md:text-5xl">Partagez votre expérience</h2>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <ReviewCta />
+          <UberEatsCta />
+        </div>
+
+        <div className="mt-6">
+          <SocialLinks />
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-16 md:px-10 md:pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-black/10 p-8 md:p-10">
           <div className="mb-3 text-xs uppercase tracking-[0.24em] text-tsCream/65">A propos</div>
-          <h2 className="text-3xl font-semibold text-tsCream md:text-5xl">Un heritage algerois a Montreal</h2>
+          <h2 className="text-3xl font-semibold text-tsCream md:text-5xl">
+            Un héritage algérois à Montréal
+          </h2>
           <p className="mt-6 max-w-4xl text-base leading-8 text-tsCream/85">
-            Tresors Sucres met de l'avant une patisserie algerienne artisanale, chaleureuse et
-            raffinee. Le site est pense pour offrir une image premium de la maison, mettre les
-            produits en valeur et simplifier l'acces aux informations essentielles pour la clientele.
+            Trésors Sucrés met en avant une pâtisserie algérienne artisanale, chaleureuse et
+            raffinée. Nous mettons les produits en valeur et simplifions l’accès aux informations
+            essentielles pour la clientèle.
           </p>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
