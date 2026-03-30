@@ -8,7 +8,8 @@ export default function ReviewCta() {
     <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-soft">
       <div className="text-xs uppercase tracking-[0.22em] text-tsCream/65">Avis Google</div>
       <div className="mt-3 text-sm leading-7 text-tsCream/85">
-        Vous aimez nos pâtisseries ? Laissez un avis Google, ça aide vraiment les nouveaux clients.
+        Si vous avez apprécié votre visite, un avis Google nous aide à faire connaître notre maison
+        auprès de nouveaux gourmands.
       </div>
       <div className="mt-5">
         <a

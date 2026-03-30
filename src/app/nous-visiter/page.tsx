@@ -49,7 +49,9 @@ export default function NousVisiterPage() {
                   <Phone className="mt-0.5 h-5 w-5 text-tsCream" />
                   <div>
                     <div className="font-medium text-tsCream">{site.phone}</div>
-                    <div className="text-sm text-tsCream/70">Commandes et renseignements</div>
+                    <div className="text-sm text-tsCream/70">
+                      Commandes, renseignements et informations en boutique
+                    </div>
                   </div>
                 </div>
               </div>
@@ -58,8 +60,8 @@ export default function NousVisiterPage() {
             <div className="rounded-[1.75rem] border border-white/10 bg-tsGreen/90 p-6 text-tsCream shadow-soft">
               <div className="text-xs uppercase tracking-[0.22em] text-tsCream/70">Maison signature</div>
               <p className="mt-4 text-lg leading-8 text-tsCream/95">
-                Baklawa, makrout, tcharek, dziriette et autres douceurs preparees dans un esprit
-                de tradition, de finesse et de generosite.
+                Baklawa, makrout, charek, dziriettes et autres douceurs préparées dans un esprit de
+                tradition, de finesse et de générosité.
               </p>
             </div>
 

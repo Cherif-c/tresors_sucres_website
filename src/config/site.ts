@@ -1,6 +1,9 @@
+export type SocialPlatform = 'instagram' | 'facebook' | 'tiktok';
+
 export type SocialLink = {
   label: string;
   url: string;
+  platform: SocialPlatform;
 };
 
 function envString(name: string, fallback: string): string {
@@ -64,9 +67,10 @@ const uberEatsUrl = envString('NEXT_PUBLIC_UBEREATS_URL', uberEatsUrlDefault).tr
 const showUberEatsRequested = envBool('NEXT_PUBLIC_SHOW_UBEREATS', true);
 const showUberEats = showUberEatsRequested && uberEatsUrl.length > 0;
 
-const socialLinks: SocialLink[] = [
+const socialLinksRaw: SocialLink[] = [
   {
     label: 'Instagram',
+    platform: 'instagram',
     url: envString(
       'NEXT_PUBLIC_INSTAGRAM_URL',
       'https://www.instagram.com/les.tresors.sucres',
@@ -74,6 +78,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     label: 'Facebook',
+    platform: 'facebook',
     url: envString(
       'NEXT_PUBLIC_FACEBOOK_URL',
       'https://www.facebook.com/p/Les-tr%C3%A9sors-sucr%C3%A9s-patisserie-Algerienne-100054435281823/?locale=fr_CA',
@@ -81,12 +86,14 @@ const socialLinks: SocialLink[] = [
   },
   {
     label: 'TikTok',
+    platform: 'tiktok',
     url: envString('NEXT_PUBLIC_TIKTOK_URL', 'https://www.tiktok.com/@tresors.sucres.mtl').trim(),
   },
-].filter((l) => l.url.length > 0);
+];
+const socialLinks = socialLinksRaw.filter((l) => l.url.length > 0);
 
 const seoDescription =
-  'Pâtisserie algérienne artisanale à Montréal (Jean-Talon) : baklava, makrout, cornes de gazelle, pâtisseries traditionnelles et boîtes cadeaux. Plus de 20 ans de savoir-faire.';
+  'Pâtisserie algérienne artisanale à Montréal, sur Jean-Talon : baklawa, makrout, cornes de gazelle, pâtisseries traditionnelles et boîtes gourmandes. Plus de 20 ans de savoir-faire.';
 
 export const site = {
   brandName: 'Trésors Sucrés',

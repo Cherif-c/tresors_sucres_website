@@ -1,20 +1,13 @@
 import type { Metadata } from 'next';
+import ProductCard from '@/components/ProductCard';
 import { pageMetadata } from '@/lib/metadata';
+import { products } from '@/data/products';
 
 export const metadata: Metadata = pageMetadata(
   '/menu',
   'Menu — pâtisseries algériennes',
-  'Baklawa, makrout, tcharek, dziriettes, cornets et spécialités algériennes artisanales à Montréal (Jean-Talon).',
+  'Baklawa, makrout, charek, dziriettes, cornets et spécialités algériennes artisanales à Montréal, sur Jean-Talon.',
 );
-
-const pastries = [
-  'Baklawa',
-  'Makrout',
-  'Tcharek',
-  'Dziriette',
-  'Mchewek',
-  'Cornets amande et pistache',
-];
 
 export default function MenuPage() {
   return (
@@ -26,23 +19,14 @@ export default function MenuPage() {
             <h1 className="text-3xl font-semibold text-tsCream md:text-5xl">Nos pâtisseries</h1>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-tsCream/80 md:text-base">
-            Un assortiment de classiques algeriens et de specialites maison presente dans une
-            interface premium, claire et facile a faire evoluer.
+            Découvrez une sélection de pâtisseries algériennes artisanales, préparées avec soin et
+            présentées dans un esprit raffiné, fidèle à l’univers de Trésors Sucrés.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {pastries.map((item) => (
-            <div
-              key={item}
-              className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10"
-            >
-              <div className="mb-4 h-24 rounded-[1.25rem] bg-gradient-to-br from-tsCream/20 to-transparent" />
-              <div className="text-2xl font-semibold text-tsCream">{item}</div>
-              <p className="mt-3 text-sm leading-7 text-tsCream/75">
-                Visuel et fiche produit a enrichir avec photos, descriptions et categories.
-              </p>
-            </div>
+          {products.map((item) => (
+            <ProductCard key={item.id} product={item} />
           ))}
         </div>
       </section>

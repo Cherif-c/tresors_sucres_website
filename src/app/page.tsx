@@ -1,17 +1,12 @@
+import ProductCard from '@/components/ProductCard';
 import ReviewCta from '@/components/ReviewCta';
 import SocialLinks from '@/components/SocialLinks';
 import UberEatsCta from '@/components/UberEatsCta';
-
-const pastries = [
-  'Baklawa',
-  'Makrout',
-  'Tcharek',
-  'Dziriette',
-  'Mchewek',
-  'Cornets amande et pistache',
-];
+import { products } from '@/data/products';
 
 export default function HomePage() {
+  const preview = products.slice(0, 3);
+
   return (
     <div>
       <section className="mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-10">
@@ -44,12 +39,12 @@ export default function HomePage() {
               <div className="text-5xl font-semibold leading-none text-tsCream md:text-7xl">
                 Tradition.
                 <br />
-                Elegance.
+                Élégance.
                 <br />
-                Generosite.
+                Générosité.
               </div>
               <p className="mt-6 max-w-2xl text-base leading-8 text-tsCream/80">
-                Une maison de pâtisseries algériennes fines pour offrir, partager et célébrer.
+                Une maison de pâtisseries algériennes fines, pensée pour offrir, partager et célébrer.
                 Une signature visuelle sobre, chaleureuse et haut de gamme, à l’image de la marque.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -74,27 +69,18 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <div className="mb-3 text-xs uppercase tracking-[0.24em] text-tsCream/65">Selection</div>
+            <div className="mb-3 text-xs uppercase tracking-[0.24em] text-tsCream/65">Sélection</div>
             <h2 className="text-3xl font-semibold text-tsCream md:text-5xl">Aperçu du menu</h2>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-tsCream/80 md:text-base">
-            Un assortiment de classiques algeriens et de specialites maison presente dans une
-            interface premium, claire et facile a faire evoluer.
+            Une sélection de classiques algériens et de spécialités maison, présentée dans un univers
+            clair, raffiné et fidèle à l’identité de Trésors Sucrés.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {pastries.slice(0, 3).map((item) => (
-            <div
-              key={item}
-              className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:bg-white/10"
-            >
-              <div className="mb-4 h-24 rounded-[1.25rem] bg-gradient-to-br from-tsCream/20 to-transparent" />
-              <div className="text-2xl font-semibold text-tsCream">{item}</div>
-              <p className="mt-3 text-sm leading-7 text-tsCream/75">
-                Visuel et fiche produit a enrichir avec photos, descriptions et categories.
-              </p>
-            </div>
+          {preview.map((item) => (
+            <ProductCard key={item.id} product={item} />
           ))}
         </div>
 
@@ -126,14 +112,14 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-6 pb-16 md:px-10 md:pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-black/10 p-8 md:p-10">
-          <div className="mb-3 text-xs uppercase tracking-[0.24em] text-tsCream/65">A propos</div>
+          <div className="mb-3 text-xs uppercase tracking-[0.24em] text-tsCream/65">À propos</div>
           <h2 className="text-3xl font-semibold text-tsCream md:text-5xl">
             Un héritage algérois à Montréal
           </h2>
           <p className="mt-6 max-w-4xl text-base leading-8 text-tsCream/85">
-            Trésors Sucrés met en avant une pâtisserie algérienne artisanale, chaleureuse et
-            raffinée. Nous mettons les produits en valeur et simplifions l’accès aux informations
-            essentielles pour la clientèle.
+            Trésors Sucrés met à l’honneur une pâtisserie algérienne artisanale, chaleureuse et raffinée.
+            Chaque création s’inscrit dans une tradition de goût, de soin et de générosité, avec une
+            volonté constante d’offrir une expérience à la fois authentique et élégante.
           </p>
         </div>
       </section>

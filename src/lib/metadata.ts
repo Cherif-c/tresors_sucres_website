@@ -2,13 +2,15 @@ import type { Metadata } from 'next';
 import { site } from '@/config/site';
 
 const keywords = [
-  'pâtisserie algérienne',
+  'pâtisserie algérienne artisanale',
   'Montréal',
   'Jean-Talon',
-  'baklava',
   'baklawa',
   'makrout',
+  'charek',
   'corne de gazelle',
+  'dziriettes',
+  'ktayef',
   'pâtisseries orientales',
   'Trésors Sucrés',
 ];

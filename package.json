@@ -9,7 +9,8 @@
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync:photos": "node scripts/sync-product-photos.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.511.0",
